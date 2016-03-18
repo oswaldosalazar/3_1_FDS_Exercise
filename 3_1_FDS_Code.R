@@ -1,4 +1,4 @@
-refine_original <- read.csv("~/Documents/Personal Documents/Personal/R/refine_original.csv")
+refine_original <- read.csv("~/Documents/Personal Documents/Personal/R/3_1_FDS_Exercise/refine_original.csv")
 head(refine_original)
 
 refine_working <- refine_original
