@@ -146,10 +146,10 @@ class(refine_working)</code></pre>
 <div id="clean-up-brand-names" class="section level3">
 <h3>1: Clean up brand names</h3>
 <p>In this part, I standardized the product company name according to the instructions: phillips, akzo, van houten and unilever. To achieve this I used the function grepl to seach for matched to an argument, in this case the company name.</p>
-<pre class="r"><code>refine_working$company[grepl(&quot;p&quot;, refine_working$company)] &lt;- &quot;phillips&quot;
-refine_working$company[grepl(&quot;k&quot;, refine_working$company)] &lt;- &quot;akzo&quot;
-refine_working$company[grepl(&quot;t&quot;, refine_working$company)] &lt;- &quot;van houten&quot;
-refine_working$company[grepl(&quot;r&quot;, refine_working$company)] &lt;- &quot;unilever&quot;</code></pre>
+<pre class="r"><code>refine_working$company[grepl(&quot;p&quot;, refine_working$company, ignore.case = TRUE)] &lt;- &quot;phillips&quot;
+refine_working$company[grepl(&quot;k&quot;, refine_working$company, ignore.case = TRUE)] &lt;- &quot;akzo&quot;
+refine_working$company[grepl(&quot;t&quot;, refine_working$company, ignore.case = TRUE)] &lt;- &quot;van houten&quot;
+refine_working$company[grepl(&quot;r&quot;, refine_working$company, ignore.case = TRUE)] &lt;- &quot;unilever&quot;</code></pre>
 <p>Then checked the commands results:</p>
 <pre class="r"><code>head(refine_working)</code></pre>
 <pre><code>##    company Product.code...number             address   city
@@ -307,7 +307,7 @@ head(refine_working)</code></pre>
 ## 6    phillips                  p-23 Groningensingel 152 arnhem
 ## 7        akzo                  v-43   Leeuwardenweg 178 arnhem
 ## 8        akzo                  v-12   Leeuwardenweg 179 arnhem
-## 9        AKZO                   x-5   Leeuwardenweg 180 arnhem
+## 9        akzo                   x-5   Leeuwardenweg 180 arnhem
 ## 10       akzo                  p-34   Leeuwardenweg 181 arnhem
 ## 11       akzo                   q-5   Leeuwardenweg 182 arnhem
 ## 12       akzo                   q-9   Leeuwardenweg 183 arnhem
@@ -385,7 +385,7 @@ head(refine_working)</code></pre>
 ## 6                 1            0                  0                0
 ## 7                 0            1                  0                0
 ## 8                 0            1                  0                0
-## 9                 0            0                  0                0
+## 9                 0            1                  0                0
 ## 10                0            1                  0                0
 ## 11                0            1                  0                0
 ## 12                0            1                  0                0

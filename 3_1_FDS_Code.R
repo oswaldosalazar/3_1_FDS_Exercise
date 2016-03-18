@@ -4,10 +4,10 @@ head(refine_original)
 refine_working <- refine_original
 class(refine_working)
 
-refine_working$company[grepl("p", refine_working$company)] <- "phillips"
-refine_working$company[grepl("k", refine_working$company)] <- "akzo"
-refine_working$company[grepl("t", refine_working$company)] <- "van houten"
-refine_working$company[grepl("r", refine_working$company)] <- "unilever"
+refine_working$company[grepl("p", refine_working$company, ignore.case = TRUE)] <- "phillips"
+refine_working$company[grepl("k", refine_working$company, ignore.case = TRUE)] <- "akzo"
+refine_working$company[grepl("t", refine_working$company, ignore.case = TRUE)] <- "van houten"
+refine_working$company[grepl("r", refine_working$company, ignore.case = TRUE)] <- "unilever"
 head(refine_working)
 
 refine_working$product_code <- substr(refine_working$Product.code...number, 1,1)
